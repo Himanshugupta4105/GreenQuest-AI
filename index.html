@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GreenQuest AI - Local AI that gets you outside.">
+  <title>GreenQuest AI — Touch Grass</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <nav class="nav">
+    <a class="logo" href="#">
+      <span class="logo-icon">🌿</span>
+      <span>GreenQuest <b>AI</b></span>
+    </a>
+    <div class="nav-right">
+      <span class="local-status" id="status">
+        <i></i> Local AI
+      </span>
+      <a href="#create" class="nav-link">Create Quest</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow"><span>●</span> HACKTOBERFEST · TOUCH GRASS</div>
+        <h1>Turn AI time into<br><em>outside time.</em></h1>
+        <p class="hero-text">
+          GreenQuest AI creates personalized outdoor missions using local,
+          open-weight AI. Get your mission. Put the phone away. Go explore.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#create">Create my quest <span>→</span></a>
+          <button class="btn btn-secondary" id="surpriseBtn">🎲 Surprise me</button>
+        </div>
+
+        <div class="trust">
+          <span>🔒 Private by design</span>
+          <span>⚡ Runs with Ollama</span>
+          <span>💸 No API key</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="floating leaf-one">🍃</div>
+        <div class="floating leaf-two">🌱</div>
+        <div class="quest-card">
+          <div class="card-top">
+            <span class="tiny-label">TODAY'S QUEST</span>
+            <span class="green-dot"></span>
+          </div>
+          <div class="card-icon">🌳</div>
+          <h2>Five Senses Walk</h2>
+          <p>Slow down and discover five things you normally walk past.</p>
+          <div class="mini-tasks">
+            <div><span>👀</span> Spot something unusual</div>
+            <div><span>👂</span> Hear three different sounds</div>
+            <div><span>🍃</span> Find three shades of green</div>
+          </div>
+          <div class="card-footer">
+            <span>⏱ 20 min</span>
+            <span>🌿 Easy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat">
+        <strong id="completed">0</strong>
+        <span>quests completed</span>
+      </div>
+      <div class="stat">
+        <strong id="minutes">0</strong>
+        <span>minutes outside</span>
+      </div>
+      <div class="stat">
+        <strong id="streak">0</strong>
+        <span>day streak</span>
+      </div>
+      <div class="stat">
+        <strong>100%</strong>
+        <span>real-world goal</span>
+      </div>
+    </section>
+
+    <!-- CREATE -->
+    <section class="section" id="create">
+      <div class="section-title">
+        <div>
+          <div class="eyebrow">01 / CREATE A QUEST</div>
+          <h2>What kind of adventure<br>do you want?</h2>
+        </div>
+        <p>Choose your situation. GreenQuest turns it into a practical mission you can complete outdoors.</p>
+      </div>
+
+      <div class="builder">
+        <aside class="settings">
+          <div class="setting">
+            <label>How much time do you have?</label>
+            <div class="choices" id="timeChoices">
+              <button class="choice active" data-value="15 minutes">15 min</button>
+              <button class="choice" data-value="30 minutes">30 min</button>
+              <button class="choice" data-value="1 hour">1 hour</button>
+              <button class="choice" data-value="2 hours">2 hours</button>
+            </div>
+          </div>
+
+          <div class="setting">
+            <label>What's your mood?</label>
+            <div class="choices" id="moodChoices">
+              <button class="choice active" data-value="Relaxing">🧘 Relax</button>
+              <button class="choice" data-value="Adventurous">🧭 Adventure</button>
+              <button class="choice" data-value="Energetic">🏃 Fitness</button>
+              <button class="choice" data-value="Curious">🔎 Explore</button>
+            </div>
+          </div>
+
+          <div class="setting">
+            <label>Where are you going?</label>
+            <div class="choices" id="placeChoices">
+              <button class="choice active" data-value="Park">🌳 Park</button>
+              <button class="choice" data-value="Garden">🌱 Garden</button>
+              <button class="choice" data-value="Neighborhood">🏘️ Neighborhood</button>
+              <button class="choice" data-value="Any safe outdoor place">🌎 Anywhere</button>
+            </div>
+          </div>
+
+          <button class="generate" id="generateBtn">
+            <span>✨</span> Generate my quest
+          </button>
+          <div class="small-note">Powered by Ollama + open-weight AI when available.</div>
+        </aside>
+
+        <section class="result" id="result">
+          <div class="empty">
+            <div class="empty-circle">🌿</div>
+            <h3>Your quest is waiting.</h3>
+            <p>Choose your preferences and create a mission. The best part happens after you close this screen.</p>
+            <div class="empty-tip">💡 <span>Tip:</span> The goal is not more screen time. It's a reason to leave it.
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how">
+      <div class="center-title">
+        <div class="eyebrow">02 / HOW IT WORKS</div>
+        <h2>The screen is only the starting point.</h2>
+        <p>Three simple steps. One real-world result.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <span class="number">01</span>
+          <div class="step-icon">🤖</div>
+          <h3>AI plans</h3>
+          <p>Local AI creates a quest around your time, mood and surroundings.</p>
+        </article>
+        <div class="arrow">→</div>
+        <article class="step">
+          <span class="number">02</span>
+          <div class="step-icon">📱</div>
+          <h3>Screen ends</h3>
+          <p>Read your mission, then put the device away.</p>
+        </article>
+        <div class="arrow">→</div>
+        <article class="step">
+          <span class="number">03</span>
+          <div class="step-icon">🌳</div>
+          <h3>You explore</h3>
+          <p>Complete your challenge and experience the world around you.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- OPEN AI -->
+    <section class="section open-ai">
+      <div class="open-card">
+        <div class="open-icon">🔓</div>
+        <div class="open-copy">
+          <div class="eyebrow">03 / OPEN INNOVATION</div>
+          <h2>Why local open AI?</h2>
+          <p>
+            GreenQuest is designed for <strong>Ollama</strong> and open-weight models.
+            The AI can run on your own computer, your preferences don't need to be
+            sent to a cloud service, models can be swapped, and there is no per-request
+            API bill.
+          </p>
+          <div class="feature-pills">
+            <span>🔐 Private</span>
+            <span>🧠 Model freedom</span>
+            <span>💻 Local inference</span>
+            <span>💰 Zero API cost</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo"><span class="logo-icon">🌿</span><span>GreenQuest <b>AI</b></span></div>
+    <p>Built for Hacktoberfest · Touch Grass</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
